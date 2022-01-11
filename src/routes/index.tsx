@@ -4,14 +4,14 @@ import { Switch, Redirect, Route } from "react-router-dom"
 const SignIn = lazy(
   () =>
     import(
-      /* webpackPrefetch: true */ /* webpackChunkName: "lazyHome" */ "../pages/SignIn"
+      /* webpackPrefetch: true */ /* webpackChunkName: "lazySignIn" */ "../pages/SignIn"
     )
 )
 
 const Books = lazy(
   () =>
     import(
-      /* webpackPrefetch: true */ /* webpackChunkName: "lazyMarketplace" */ "../pages/Books"
+      /* webpackPrefetch: true */ /* webpackChunkName: "lazyBooks" */ "../pages/Books"
     )
 )
 
