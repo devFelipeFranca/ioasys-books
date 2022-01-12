@@ -14,6 +14,8 @@ export const Main = styled.main`
   padding-top: 35vh;
   margin-left: 10%;
 
+  transition: margin-left 0.3s;
+
   width: 100%;
 
   h1 {
@@ -32,5 +34,6 @@ export const Main = styled.main`
   }
   @media (max-width: 540px) {
     margin-left: 5%;
+    transition: margin-left 0.3s;
   }
 `

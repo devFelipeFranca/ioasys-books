@@ -22,4 +22,6 @@ export const BookListContainer = styled.main`
 
   margin-top: 40px;
   margin-left: 20px;
+
+  transition: flex-wrap 0.3s;
 `

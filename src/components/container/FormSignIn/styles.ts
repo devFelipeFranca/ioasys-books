@@ -9,6 +9,8 @@ export const FromContainer = styled.form`
     height: 60px;
     max-width: 360px;
 
+    transition: max-width 0.3s;
+
     background: rgba(0, 0, 0, 0.32);
     backdrop-filter: blur(2px);
     border-radius: 4px;
@@ -45,6 +47,10 @@ export const FromContainer = styled.form`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+    }
+    @media (max-width: 400px) {
+      max-width: 288px;
+      transition: max-width 0.3s;
     }
   }
 

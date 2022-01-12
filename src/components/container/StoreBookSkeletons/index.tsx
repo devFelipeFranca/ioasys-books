@@ -13,7 +13,10 @@ export const StoreBookSkeletons = (): React.ReactElement => {
     <>
       {renderArray()?.map((item: string, index: number, arr: string[]) => {
         return (
-          <S.BookCardSkeletonContainer key={`${item}:${index}`}>
+          <S.BookCardSkeletonContainer
+            className="fade-in"
+            key={`${item}:${index}`}
+          >
             <SK.SquareCard />
           </S.BookCardSkeletonContainer>
         )

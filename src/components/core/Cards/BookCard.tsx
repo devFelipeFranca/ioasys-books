@@ -14,7 +14,7 @@ const BookCard = ({
   showInModal,
 }: IBookCard): React.ReactElement => {
   return (
-    <S.BookCardContainer id={id} onClick={showInModal}>
+    <S.BookCardContainer id={id} onClick={showInModal} className="fade-in">
       {imageUrl && (
         <S.ImageContainer id={id}>
           <img src={imageUrl} id={id} alt="imagem da capa do livro" />

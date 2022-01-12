@@ -47,7 +47,7 @@ export const Books = (): React.ReactElement => {
   }
 
   return (
-    <S.BooksContainer>
+    <S.BooksContainer className="fade-in">
       {bookModal && (
         <BookModal data={bookDetails} close={closeBookDetailsModal} />
       )}

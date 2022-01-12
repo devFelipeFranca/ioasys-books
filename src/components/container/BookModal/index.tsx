@@ -10,14 +10,16 @@ import InformationItem from "../../core/InformationItem"
 
 const BookModal = ({ data, close }: IBookModalProps): React.ReactElement => {
   return (
-    <S.BookModalContainer>
+    <S.BookModalContainer className="fade-in">
       <S.CloseButtonModalContainer>
         <CloseButton closeIcon={CloseIcon} handleClick={close} />
       </S.CloseButtonModalContainer>
       <S.BookModal>
-        <S.ImageContainer>
-          <img src={data?.imageUrl} />
-        </S.ImageContainer>
+        {data?.imageUrl && (
+          <S.ImageContainer>
+            <img src={data?.imageUrl} />
+          </S.ImageContainer>
+        )}
         <div>
           <S.TitleContainer>
             <h1>{data?.title}</h1>
