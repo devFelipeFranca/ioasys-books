@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build:analyzer": "npm run build && npx cra-bundle-analyzer",
     "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
