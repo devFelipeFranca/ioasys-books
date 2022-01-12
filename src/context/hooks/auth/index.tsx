@@ -1,6 +1,7 @@
 import React, { createContext, useCallback, useContext, useState } from "react"
 
-import { signIn } from "../../../services/requests/auth"
+import { signIn } from "../../../services/providers/auth"
+import { removeTokenFromLocalStorage } from "../../../shared/func/deleteToken"
 import { saveToken } from "../../../shared/func/saveToken"
 import {
   IAuthContext,
@@ -33,9 +34,28 @@ export const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     if (!res.success) setIsErrors(true)
   }, [])
 
+  const logoutUser = useCallback(async () => {
+    setIsErrors(false)
+    setUserInfos({
+      id: "",
+      name: "",
+      birthdate: "",
+      gender: "",
+    })
+    removeTokenFromLocalStorage()
+    setAuthorized(false)
+  }, [])
+
   return (
     <AuthContext.Provider
-      value={{ submitForm, userInfos, isErrors, setIsErrors, authorized }}
+      value={{
+        submitForm,
+        userInfos,
+        isErrors,
+        setIsErrors,
+        authorized,
+        logoutUser,
+      }}
     >
       {children}
     </AuthContext.Provider>

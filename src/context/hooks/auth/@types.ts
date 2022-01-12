@@ -11,11 +11,12 @@ export interface IUserInfos {
 }
 
 export interface IAuthContext {
-  submitForm: (data: ISubmitFormData) => void
+  submitForm: (data: ISubmitFormData) => Promise<void>
   userInfos: IUserInfos
   isErrors: boolean
   setIsErrors: (value: boolean) => void
   authorized: boolean
+  logoutUser: () => Promise<void>
 }
 
 export interface IAuthProvider {

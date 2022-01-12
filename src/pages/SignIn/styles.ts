@@ -8,29 +8,29 @@ export const SignInContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+`
 
-  .login-container_title {
-    padding-top: 35vh;
-    margin-left: 10%;
+export const Main = styled.main`
+  padding-top: 35vh;
+  margin-left: 10%;
 
-    width: 100%;
+  width: 100%;
 
-    h1 {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
+  h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 
-      font: 300 28px/40px "Heebo";
+    font: 300 28px/40px "Heebo";
 
-      color: #ffffff;
+    color: #ffffff;
 
-      img {
-        margin-right: 17px;
-      }
+    img {
+      margin-right: 17px;
     }
-    @media (max-width: 540px) {
-      margin-left: 5%;
-    }
+  }
+  @media (max-width: 540px) {
+    margin-left: 5%;
   }
 `

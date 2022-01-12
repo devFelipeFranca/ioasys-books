@@ -3,12 +3,11 @@ import { useHistory } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { formSignInSchema } from "./validation"
-
-import ButtonSignIn from "../buttons/ButtonSignIn"
+import { InputForm } from "../../core/Inputs/InputForm"
+import { useAuth } from "../../../context/hooks/auth"
 
 import * as S from "./styles"
 import "cooltipz-css"
-import { useAuth } from "../../context/hooks/auth"
 
 export const FormSignIn = (): React.ReactElement => {
   const history = useHistory()
@@ -33,7 +32,7 @@ export const FormSignIn = (): React.ReactElement => {
 
   useEffect(() => {
     if (isErrors) {
-      setTimeout(() => setIsErrors(false), 2000)
+      setTimeout(() => setIsErrors(false), 3500)
     }
   }, [isErrors])
 
@@ -45,18 +44,14 @@ export const FormSignIn = (): React.ReactElement => {
 
   return (
     <S.FromContainer onSubmit={handleSubmit(submitForm)}>
-      <div className="input-form_login">
-        <label htmlFor="">Email</label>
-        <input autoComplete="off" type="email" {...register("email")} />
-      </div>
-
-      <div className="input-form_login">
-        <label htmlFor="">Senha</label>
-        <div>
-          <input autoComplete="off" type="password" {...register("password")} />
-          <ButtonSignIn />
-        </div>
-      </div>
+      <InputForm type="email" label="Email" register={register} />
+      <InputForm
+        type="password"
+        label="Senha"
+        register={register}
+        showButton={true}
+        buttonText="Entrar"
+      />
 
       {isErrors && (
         <div

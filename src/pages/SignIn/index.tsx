@@ -1,20 +1,19 @@
 import React from "react"
 
-import FormSignIn from "../../components/FormSignIn"
+import FormSignIn from "../../components/container/FormSignIn"
+import SignInHeader from "../../components/core/Headers/SignInHeader"
 
-import Logo from "../../assets/icons/Logo.svg"
+import Logo from "../../assets/icons/LogoWhite.svg"
 
 import * as S from "./styles"
 
 export const SignIn = (): React.ReactElement => {
   return (
     <S.SignInContainer>
-      <div className="login-container_title">
-        <h1>
-          <img src={Logo} alt="Logo da empresa ioasys" /> Books
-        </h1>
+      <S.Main>
+        <SignInHeader logo={Logo} />
         <FormSignIn />
-      </div>
+      </S.Main>
     </S.SignInContainer>
   )
 }

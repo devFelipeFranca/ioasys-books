@@ -3,9 +3,9 @@ import { IApiResult } from "../../api/@types"
 import { IGetBookById, IGetBookList } from "./@types"
 
 export const getBookList = async ({
-  page = "1",
-  amount = "",
-  category = "",
+  page,
+  amount,
+  category,
 }: IGetBookList): Promise<IApiResult> => {
   const queryAmount = amount ? `&amount=${amount}` : ""
   const queryCategory = category ? `&category=${category}` : ""
@@ -14,7 +14,7 @@ export const getBookList = async ({
 }
 
 export const getBookById = async ({
-  bookId = "",
+  bookId,
 }: IGetBookById): Promise<IApiResult> => {
   const url = `/books/${bookId}`
   return await request(url)

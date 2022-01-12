@@ -1,5 +1,7 @@
 import React, { lazy, Suspense } from "react"
 import { Switch, Redirect, Route } from "react-router-dom"
+import { useAuth } from "../context/hooks/auth"
+import PrivateRoute from "./private"
 
 const SignIn = lazy(
   () =>
@@ -16,6 +18,7 @@ const Books = lazy(
 )
 
 export const Routes = (): React.ReactElement => {
+  const { authorized } = useAuth()
   return (
     <Suspense
       fallback={
@@ -24,7 +27,12 @@ export const Routes = (): React.ReactElement => {
     >
       <Switch>
         <Route exact path="/signIn" component={SignIn} />
-        <Route exact path="/books" component={Books} />
+        <PrivateRoute
+          component={Books}
+          exact
+          path="/books"
+          isAuth={authorized}
+        />
         <Redirect from="*" to="/signIn" />
       </Switch>
     </Suspense>

@@ -1,6 +1,6 @@
 export interface IGetBookList {
-  page?: string
-  amount?: string
+  page: number
+  amount?: number
   category?: string
 }
 
